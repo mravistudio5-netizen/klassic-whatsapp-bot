@@ -7,18 +7,22 @@ headers = {
     "Content-Type": "application/json"
 }
 
-data = {
-    "messaging_product": "whatsapp",
-    "to": "917775999250",
-    "type": "template",
-    "template": {
-        "name": "hello_world",
-        "language": {
-            "code": "en_US"
-        }
-    }
+numbers = {
+    "919561823015": "Warehouse Open",
+    "918262942141": "Kids Wear Open"
 }
 
-response = requests.post(url, headers=headers, json=data)
+for number, message_text in numbers.items():
 
-print(response.text)
+    data = {
+        "messaging_product": "whatsapp",
+        "to": number,
+        "type": "text",
+        "text": {
+            "body": message_text
+        }
+    }
+
+    response = requests.post(url, headers=headers, json=data)
+
+    print(response.text)
