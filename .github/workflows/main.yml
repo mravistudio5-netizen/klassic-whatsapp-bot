@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '30 6 * * *'
+    - cron: '46 7 * * *'
+    - cron: '48 7 * * *'
 
 jobs:
   run-python:
